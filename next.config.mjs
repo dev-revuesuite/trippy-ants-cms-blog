@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Blog is mounted at https://www.trippyants.com/blog (Wix main site + Vercel app).
-  basePath: '/blog',
+  // Served at blog.trippyants.com (subdomain) — no basePath needed.
   images: {
     unoptimized: true,
     remotePatterns: [

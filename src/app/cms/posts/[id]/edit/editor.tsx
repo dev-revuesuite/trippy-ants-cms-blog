@@ -238,7 +238,10 @@ export function PostEditor({ post, categories, tags, authors, selectedTagIds: in
                   value={slug}
                   onChange={(e) => { setSlug(e.target.value); setSlugTouched(true); }}
                 />
-                <p className="mt-1 text-xs text-muted-foreground">{PUBLIC_BLOG_PREFIX}/{slug || 'your-slug-here'}</p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {PUBLIC_BLOG_PREFIX ? `${PUBLIC_BLOG_PREFIX}/` : '/'}
+                  {slug || 'your-slug-here'}
+                </p>
               </div>
               <div>
                 <Label>Meta title</Label>

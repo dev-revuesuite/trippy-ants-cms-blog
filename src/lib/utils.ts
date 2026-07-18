@@ -35,7 +35,7 @@ export function firstName(fullName: string | null | undefined, fallback = 'there
 }
 
 export function absoluteUrl(path: string) {
-  const base = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || 'https://www.trippyants.com/blog';
+  const base = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || 'https://blog.trippyants.com';
   return `${base}${path.startsWith('/') ? path : '/' + path}`;
 }
 

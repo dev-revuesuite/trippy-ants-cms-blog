@@ -18,7 +18,7 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.trippyants.com/blog'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://blog.trippyants.com'),
   title: {
     default: `${SITE_NAME} — Design Journal`,
     template: `%s | ${SITE_NAME}`,
