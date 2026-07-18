@@ -1,0 +1,20 @@
+# Dependencies & build
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# Secrets (do not commit)
+.env
+.env.local
+.env.*.local
+
+# Junk — Phase 0: never commit
+*.exe
+*.docx
+*.tar.gz
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log

@@ -1,0 +1,1 @@
+-- Optional seed data — leave empty for production (no dummy posts).

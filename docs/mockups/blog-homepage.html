@@ -1,0 +1,231 @@
+<style>
+.revue-frame { font-family: 'Inter', var(--font-sans); color: #121211; background: #FFFFFF; border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); overflow: hidden; }
+.revue-frame * { box-sizing: border-box; }
+.serif { font-family: 'Source Serif 4', 'Source Serif Pro', Georgia, serif; }
+.eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; color: #334AC0; }
+.muted { color: #6b6b66; }
+.divider { height: 0.5px; background: #EDEDED; }
+.pill { display: inline-flex; align-items: center; padding: 5px 10px; border-radius: 999px; font-size: 12px; font-weight: 500; border: 0.5px solid #EDEDED; background: #fff; color: #444441; }
+.pill-active { background: #121211; color: #fff; border-color: #121211; }
+.card-img { width: 100%; aspect-ratio: 16/10; border-radius: var(--border-radius-md); display:block; }
+.headline { font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; color: #121211; }
+.dek { line-height: 1.55; color: #444441; }
+.btn-dark { background: #121211; color: #fff; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 500; border: none; cursor: pointer; }
+.btn-light { background: transparent; color: #121211; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 500; border: 0.5px solid #d8d8d2; cursor: pointer; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: #DBFE53; display: inline-block; }
+</style>
+
+<div class="revue-frame">
+  <!-- Header -->
+  <header style="display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; border-bottom: 0.5px solid #EDEDED;">
+    <div style="display: flex; align-items: center; gap: 28px;">
+      <a style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #121211;">
+        <div style="width: 24px; height: 24px; border-radius: 6px; background: #334AC0; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 500; font-size: 13px;">R</div>
+        <span style="font-weight: 500; font-size: 15px;">Revue</span>
+      </a>
+      <nav style="display: flex; gap: 20px; font-size: 13px; color: #444441;">
+        <span>Operations</span>
+        <span>Client management</span>
+        <span>Product</span>
+        <span>Industry</span>
+      </nav>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <button class="btn-light"><i class="ti ti-search" style="font-size:14px; vertical-align:-2px; margin-right:4px;" aria-hidden="true"></i>Search</button>
+      <button class="btn-light">Sign in</button>
+      <button class="btn-dark">Join the beta</button>
+    </div>
+  </header>
+
+  <!-- Masthead -->
+  <section style="text-align: center; padding: 56px 28px 36px;">
+    <div class="eyebrow" style="margin-bottom: 16px;">
+      <span class="dot" style="vertical-align: 1px; margin-right: 8px;"></span>The Revue Journal
+    </div>
+    <h1 class="serif headline" style="font-size: 56px; margin: 0 auto 14px; max-width: 720px;">
+      Field notes on the craft of running a creative agency.
+    </h1>
+    <p class="dek serif" style="font-size: 18px; max-width: 580px; margin: 0 auto;">
+      Operations, client relationships, and what we&rsquo;re learning building Revue with studios around the world.
+    </p>
+  </section>
+
+  <!-- Category filter -->
+  <div style="display: flex; justify-content: center; gap: 8px; padding: 0 28px 36px; flex-wrap: wrap;">
+    <span class="pill pill-active">All</span>
+    <span class="pill">Creative operations</span>
+    <span class="pill">Client management</span>
+    <span class="pill">Product updates</span>
+    <span class="pill">Industry insights</span>
+  </div>
+
+  <div class="divider" style="margin: 0 28px;"></div>
+
+  <!-- Featured article -->
+  <section style="padding: 40px 28px;">
+    <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: center;">
+      <div style="background: linear-gradient(135deg, #334AC0 0%, #2a3da3 100%); aspect-ratio: 16/11; border-radius: var(--border-radius-md); position: relative; overflow: hidden;">
+        <div style="position: absolute; bottom: 24px; left: 24px; right: 24px;">
+          <div style="display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; background: #DBFE53; color: #121211; font-size: 11px; font-weight: 500; letter-spacing: 0.04em;">FEATURED</div>
+        </div>
+        <div style="position: absolute; top: 24px; right: 24px; width: 80px; height: 80px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%;"></div>
+        <div style="position: absolute; top: 60px; right: 60px; width: 40px; height: 40px; background: #DBFE53; border-radius: 50%;"></div>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom: 14px;">Creative operations</div>
+        <h2 class="serif headline" style="font-size: 36px; margin: 0 0 14px;">
+          The hidden cost of context-switching in agency teams
+        </h2>
+        <p class="dek serif" style="font-size: 17px; margin: 0 0 20px;">
+          A four-month study of fifteen mid-sized studios revealed that creative directors lose nearly two days a week to coordination overhead alone. Here&rsquo;s what the data shows&mdash;and how the best teams claw it back.
+        </p>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 13px; color: #6b6b66;">
+          <div style="width: 28px; height: 28px; border-radius: 50%; background: #EDEDED; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: #444441;">AM</div>
+          <span style="color: #121211; font-weight: 500;">Aanya Mehta</span>
+          <span>&middot;</span>
+          <span>May 14, 2026</span>
+          <span>&middot;</span>
+          <span>9 min read</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" style="margin: 0 28px;"></div>
+
+  <!-- Latest grid -->
+  <section style="padding: 40px 28px 48px;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 28px;">
+      <h3 class="serif" style="font-size: 22px; margin: 0; font-weight: 500;">Latest stories</h3>
+      <a style="font-size: 13px; color: #334AC0; font-weight: 500; text-decoration: none;">View all &rarr;</a>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <!-- Card 1 -->
+      <article>
+        <div class="card-img" style="background: #F1EFE8; position: relative;">
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+            <div style="width: 64px; height: 64px; background: #334AC0; border-radius: 8px; transform: rotate(-8deg);"></div>
+            <div style="width: 64px; height: 64px; background: #DBFE53; border-radius: 8px; margin-left: -20px; transform: rotate(6deg);"></div>
+          </div>
+        </div>
+        <div class="eyebrow" style="margin: 16px 0 8px;">Client management</div>
+        <h4 class="serif headline" style="font-size: 20px; margin: 0 0 8px;">Why your agency&rsquo;s scope creep is actually a brief problem</h4>
+        <p class="dek serif" style="font-size: 14px; margin: 0 0 14px;">Most overruns start at the kickoff, not the revision round.</p>
+        <div style="display: flex; gap: 8px; font-size: 12px; color: #6b6b66;">
+          <span style="color: #121211; font-weight: 500;">The Revue Team</span><span>&middot;</span><span>6 min</span>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article>
+        <div class="card-img" style="background: #DBFE53; position: relative;">
+          <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; height: 4px; background: #121211; border-radius: 2px;"></div>
+          <div style="position: absolute; bottom: 36px; left: 20px; width: 60%; height: 4px; background: #121211; border-radius: 2px;"></div>
+          <div style="position: absolute; bottom: 52px; left: 20px; width: 40%; height: 4px; background: #121211; border-radius: 2px;"></div>
+        </div>
+        <div class="eyebrow" style="margin: 16px 0 8px;">Industry insights</div>
+        <h4 class="serif headline" style="font-size: 20px; margin: 0 0 8px;">The 2026 creative agency benchmark report</h4>
+        <p class="dek serif" style="font-size: 14px; margin: 0 0 14px;">What 240 studios told us about pricing, retention, and AI.</p>
+        <div style="display: flex; gap: 8px; font-size: 12px; color: #6b6b66;">
+          <span style="color: #121211; font-weight: 500;">Aanya Mehta</span><span>&middot;</span><span>12 min</span>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article>
+        <div class="card-img" style="background: #121211; position: relative;">
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+            <div style="color: #DBFE53; font-family: 'Source Serif 4', Georgia, serif; font-size: 48px; font-style: italic;">&ldquo;</div>
+          </div>
+        </div>
+        <div class="eyebrow" style="margin: 16px 0 8px;">Product updates</div>
+        <h4 class="serif headline" style="font-size: 20px; margin: 0 0 8px;">Introducing Pulse: AI-assisted project health checks</h4>
+        <p class="dek serif" style="font-size: 14px; margin: 0 0 14px;">Spot at-risk projects before the next status call.</p>
+        <div style="display: flex; gap: 8px; font-size: 12px; color: #6b6b66;">
+          <span style="color: #121211; font-weight: 500;">The Revue Team</span><span>&middot;</span><span>4 min</span>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article>
+        <div class="card-img" style="background: #EDEDED; position: relative;">
+          <div style="position: absolute; inset: 24px; border: 0.5px solid #b4b2a9; border-radius: 4px;"></div>
+          <div style="position: absolute; top: 36px; left: 36px; right: 36px; height: 8px; background: #334AC0; border-radius: 2px;"></div>
+          <div style="position: absolute; top: 56px; left: 36px; width: 70%; height: 6px; background: #b4b2a9; border-radius: 2px;"></div>
+          <div style="position: absolute; top: 72px; left: 36px; width: 50%; height: 6px; background: #b4b2a9; border-radius: 2px;"></div>
+        </div>
+        <div class="eyebrow" style="margin: 16px 0 8px;">Creative operations</div>
+        <h4 class="serif headline" style="font-size: 20px; margin: 0 0 8px;">A template-first approach to studio documentation</h4>
+        <p class="dek serif" style="font-size: 14px; margin: 0 0 14px;">Stop reinventing the brief deck for every new client.</p>
+        <div style="display: flex; gap: 8px; font-size: 12px; color: #6b6b66;">
+          <span style="color: #121211; font-weight: 500;">Aanya Mehta</span><span>&middot;</span><span>8 min</span>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article>
+        <div class="card-img" style="background: #334AC0; position: relative;">
+          <div style="position: absolute; top: 24px; left: 24px; width: 36px; height: 36px; border-radius: 50%; background: #DBFE53;"></div>
+          <div style="position: absolute; top: 36px; left: 50px; width: 36px; height: 36px; border-radius: 50%; background: #fff;"></div>
+          <div style="position: absolute; top: 48px; left: 76px; width: 36px; height: 36px; border-radius: 50%; background: #DBFE53; opacity: 0.7;"></div>
+        </div>
+        <div class="eyebrow" style="margin: 16px 0 8px;">Client management</div>
+        <h4 class="serif headline" style="font-size: 20px; margin: 0 0 8px;">How to run a quarterly business review that clients enjoy</h4>
+        <p class="dek serif" style="font-size: 14px; margin: 0 0 14px;">Less reporting, more shared planning.</p>
+        <div style="display: flex; gap: 8px; font-size: 12px; color: #6b6b66;">
+          <span style="color: #121211; font-weight: 500;">The Revue Team</span><span>&middot;</span><span>7 min</span>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article>
+        <div class="card-img" style="background: #F1EFE8; position: relative;">
+          <div style="position: absolute; top: 30px; left: 30px; right: 30px; bottom: 30px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; height: 100%;">
+              <div style="background: #334AC0; border-radius: 2px;"></div>
+              <div style="background: #121211; border-radius: 2px;"></div>
+              <div style="background: #DBFE53; border-radius: 2px;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="eyebrow" style="margin: 16px 0 8px;">Industry insights</div>
+        <h4 class="serif headline" style="font-size: 20px; margin: 0 0 8px;">The case for the three-person creative pod</h4>
+        <p class="dek serif" style="font-size: 14px; margin: 0 0 14px;">Why some of the best studios are getting smaller.</p>
+        <div style="display: flex; gap: 8px; font-size: 12px; color: #6b6b66;">
+          <span style="color: #121211; font-weight: 500;">Aanya Mehta</span><span>&middot;</span><span>5 min</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section style="margin: 0 28px 28px; padding: 40px; background: #121211; color: #fff; border-radius: var(--border-radius-lg); display: flex; align-items: center; justify-content: space-between; gap: 32px;">
+    <div style="flex: 1;">
+      <div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; color: #DBFE53; margin-bottom: 12px;">
+        <span class="dot" style="vertical-align: 1px; margin-right: 8px;"></span>Join the beta
+      </div>
+      <h3 class="serif" style="font-size: 26px; margin: 0 0 8px; font-weight: 500; line-height: 1.2;">The newsletter for creative agency operators.</h3>
+      <p style="margin: 0; color: #b4b2a9; font-size: 14px;">One essay every Thursday. No fluff, no roundups.</p>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <input style="background: rgba(255,255,255,0.08); border: 0.5px solid rgba(255,255,255,0.2); color: #fff; padding: 10px 16px; border-radius: 999px; font-size: 13px; width: 220px;" placeholder="you@studio.com" />
+      <button style="background: #DBFE53; color: #121211; padding: 10px 18px; border-radius: 999px; font-size: 13px; font-weight: 500; border: none; cursor: pointer;">Subscribe</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="border-top: 0.5px solid #EDEDED; padding: 28px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #6b6b66;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <div style="width: 18px; height: 18px; border-radius: 4px; background: #334AC0;"></div>
+      <span>&copy; 2026 Revue. All rights reserved.</span>
+    </div>
+    <div style="display: flex; gap: 18px;">
+      <span>Product</span>
+      <span>Pricing</span>
+      <span>RSS</span>
+      <span>Twitter</span>
+      <span>LinkedIn</span>
+    </div>
+  </footer>
+</div>

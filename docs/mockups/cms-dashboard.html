@@ -1,0 +1,193 @@
+<style>
+.cms { font-family: 'Inter', var(--font-sans); color: #121211; background: #FAFAF7; border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); overflow: hidden; display: grid; grid-template-columns: 220px 1fr; min-height: 720px; }
+.cms * { box-sizing: border-box; }
+.sidebar { background: #fff; border-right: 0.5px solid #EDEDED; padding: 20px 14px; display: flex; flex-direction: column; }
+.brand { display: flex; align-items: center; gap: 8px; padding: 6px 10px 18px; }
+.brand-mark { width: 24px; height: 24px; border-radius: 6px; background: #334AC0; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 500; font-size: 13px; }
+.new-btn { display: flex; align-items: center; justify-content: center; gap: 6px; background: #121211; color: #fff; padding: 8px 12px; border-radius: 8px; font-size: 13px; font-weight: 500; margin-bottom: 18px; border: none; cursor: pointer; }
+.nav-section { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #a8a8a0; padding: 12px 10px 6px; font-weight: 500; }
+.nav-item { display: flex; align-items: center; gap: 10px; padding: 7px 10px; border-radius: 6px; font-size: 13px; color: #444441; cursor: pointer; margin-bottom: 1px; }
+.nav-item:hover { background: #F1EFE8; }
+.nav-active { background: #EDEDED; color: #121211; font-weight: 500; }
+.nav-count { margin-left: auto; font-size: 11px; color: #6b6b66; background: #F1EFE8; padding: 1px 6px; border-radius: 999px; }
+.user-card { margin-top: auto; padding: 10px; border: 0.5px solid #EDEDED; border-radius: 8px; display: flex; align-items: center; gap: 10px; }
+.avatar { width: 30px; height: 30px; border-radius: 50%; background: #334AC0; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; }
+.main { padding: 24px 32px; overflow: hidden; }
+.topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+.crumbs { font-size: 12px; color: #6b6b66; }
+.search-bar { display: flex; align-items: center; gap: 8px; background: #fff; border: 0.5px solid #EDEDED; padding: 6px 12px; border-radius: 8px; font-size: 13px; color: #6b6b66; width: 240px; }
+.h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: 28px; font-weight: 500; margin: 0 0 4px; letter-spacing: -0.01em; }
+.h1-sub { font-size: 13px; color: #6b6b66; margin: 0; }
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0 28px; }
+.stat { background: #fff; border: 0.5px solid #EDEDED; border-radius: 10px; padding: 16px; }
+.stat-label { font-size: 11px; letter-spacing: 0.04em; color: #6b6b66; text-transform: uppercase; font-weight: 500; margin-bottom: 8px; }
+.stat-value { font-size: 26px; font-weight: 500; letter-spacing: -0.01em; }
+.stat-delta { font-size: 11px; color: #1d9e75; margin-top: 4px; }
+.stat-delta.neg { color: #c44545; }
+.panel { background: #fff; border: 0.5px solid #EDEDED; border-radius: 10px; overflow: hidden; }
+.panel-head { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-bottom: 0.5px solid #EDEDED; }
+.panel-title { font-size: 14px; font-weight: 500; margin: 0; }
+.tabs { display: flex; gap: 4px; }
+.tab { padding: 4px 10px; font-size: 12px; color: #6b6b66; border-radius: 6px; cursor: pointer; }
+.tab-active { background: #121211; color: #fff; }
+.row { display: grid; grid-template-columns: 1fr 110px 130px 100px 24px; gap: 16px; align-items: center; padding: 12px 18px; border-bottom: 0.5px solid #F1EFE8; font-size: 13px; }
+.row:last-child { border-bottom: none; }
+.row-head { background: #FAFAF7; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #a8a8a0; padding: 8px 18px; font-weight: 500; }
+.post-title { font-weight: 500; color: #121211; }
+.post-meta { font-size: 11px; color: #6b6b66; margin-top: 2px; }
+.status { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; border-radius: 999px; font-size: 11px; font-weight: 500; }
+.status-published { background: #EAF3DE; color: #3B6D11; }
+.status-draft { background: #F1EFE8; color: #5F5E5A; }
+.status-scheduled { background: #FAEEDA; color: #854F0B; }
+.dot-status { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+.muted { color: #6b6b66; }
+.icon-btn { color: #888780; cursor: pointer; }
+</style>
+
+<div class="cms">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">R</div>
+      <span style="font-weight: 500; font-size: 14px;">Revue CMS</span>
+    </div>
+
+    <button class="new-btn"><i class="ti ti-plus" style="font-size: 14px;" aria-hidden="true"></i>New post</button>
+
+    <div class="nav-section">Workspace</div>
+    <div class="nav-item nav-active"><i class="ti ti-layout-dashboard" style="font-size: 16px;" aria-hidden="true"></i>Dashboard</div>
+    <div class="nav-item"><i class="ti ti-article" style="font-size: 16px;" aria-hidden="true"></i>Posts<span class="nav-count">24</span></div>
+    <div class="nav-item"><i class="ti ti-folder" style="font-size: 16px;" aria-hidden="true"></i>Categories<span class="nav-count">4</span></div>
+    <div class="nav-item"><i class="ti ti-tag" style="font-size: 16px;" aria-hidden="true"></i>Tags<span class="nav-count">12</span></div>
+    <div class="nav-item"><i class="ti ti-photo" style="font-size: 16px;" aria-hidden="true"></i>Media</div>
+
+    <div class="nav-section">Configure</div>
+    <div class="nav-item"><i class="ti ti-settings" style="font-size: 16px;" aria-hidden="true"></i>Settings</div>
+    <div class="nav-item"><i class="ti ti-users" style="font-size: 16px;" aria-hidden="true"></i>Team</div>
+
+    <div class="user-card">
+      <div class="avatar">AM</div>
+      <div style="min-width: 0; flex: 1;">
+        <div style="font-size: 12px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Aanya Mehta</div>
+        <div style="font-size: 10px; color: #6b6b66;">Admin</div>
+      </div>
+      <i class="ti ti-logout icon-btn" style="font-size: 15px;" aria-hidden="true"></i>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <div class="crumbs">Workspace &middot; Dashboard</div>
+        <h1 class="h1">Good morning, Aanya</h1>
+        <p class="h1-sub">Here&rsquo;s what&rsquo;s happening across The Revue Journal.</p>
+      </div>
+      <div class="search-bar">
+        <i class="ti ti-search" style="font-size: 14px;" aria-hidden="true"></i>
+        <span>Search posts, tags&hellip;</span>
+        <span style="margin-left: auto; font-size: 10px; padding: 1px 5px; border: 0.5px solid #EDEDED; border-radius: 4px;">&#8984;K</span>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-label">Total posts</div>
+        <div class="stat-value">24</div>
+        <div class="stat-delta">+3 this month</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Published</div>
+        <div class="stat-value">18</div>
+        <div class="stat-delta">+2 this week</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Drafts</div>
+        <div class="stat-value">5</div>
+        <div class="stat-delta neg">3 stale &gt;14d</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Scheduled</div>
+        <div class="stat-value">1</div>
+        <div class="stat-delta">Next: May 23</div>
+      </div>
+    </div>
+
+    <!-- Recent posts panel -->
+    <div class="panel">
+      <div class="panel-head">
+        <h2 class="panel-title">Recent posts</h2>
+        <div class="tabs">
+          <span class="tab tab-active">All</span>
+          <span class="tab">Drafts</span>
+          <span class="tab">Scheduled</span>
+          <span class="tab">Published</span>
+        </div>
+      </div>
+
+      <div class="row row-head">
+        <div>Title</div>
+        <div>Status</div>
+        <div>Author</div>
+        <div>Updated</div>
+        <div></div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="post-title">The hidden cost of context-switching in agency teams</div>
+          <div class="post-meta">Creative operations &middot; /the-hidden-cost-of-context-switching</div>
+        </div>
+        <div><span class="status status-published"><span class="dot-status"></span>Published</span></div>
+        <div class="muted">Aanya Mehta</div>
+        <div class="muted">2h ago</div>
+        <div><i class="ti ti-dots icon-btn" style="font-size: 16px;" aria-hidden="true"></i></div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="post-title">Why your agency&rsquo;s scope creep is actually a brief problem</div>
+          <div class="post-meta">Client management &middot; /scope-creep-brief-problem</div>
+        </div>
+        <div><span class="status status-published"><span class="dot-status"></span>Published</span></div>
+        <div class="muted">The Revue Team</div>
+        <div class="muted">Yesterday</div>
+        <div><i class="ti ti-dots icon-btn" style="font-size: 16px;" aria-hidden="true"></i></div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="post-title">Introducing Pulse: AI-assisted project health checks</div>
+          <div class="post-meta">Product updates &middot; /introducing-pulse</div>
+        </div>
+        <div><span class="status status-scheduled"><span class="dot-status"></span>Scheduled</span></div>
+        <div class="muted">The Revue Team</div>
+        <div class="muted">May 23, 9:00 AM</div>
+        <div><i class="ti ti-dots icon-btn" style="font-size: 16px;" aria-hidden="true"></i></div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="post-title">The 2026 creative agency benchmark report</div>
+          <div class="post-meta">Industry insights &middot; /2026-agency-benchmark</div>
+        </div>
+        <div><span class="status status-draft"><span class="dot-status"></span>Draft</span></div>
+        <div class="muted">Aanya Mehta</div>
+        <div class="muted">3d ago</div>
+        <div><i class="ti ti-dots icon-btn" style="font-size: 16px;" aria-hidden="true"></i></div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="post-title">A template-first approach to studio documentation</div>
+          <div class="post-meta">Creative operations &middot; /template-first-documentation</div>
+        </div>
+        <div><span class="status status-draft"><span class="dot-status"></span>Draft</span></div>
+        <div class="muted">Aanya Mehta</div>
+        <div class="muted">5d ago</div>
+        <div><i class="ti ti-dots icon-btn" style="font-size: 16px;" aria-hidden="true"></i></div>
+      </div>
+    </div>
+  </main>
+</div>
