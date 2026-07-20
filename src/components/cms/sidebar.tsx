@@ -4,11 +4,12 @@ import type { ComponentType } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
-  LayoutDashboard, FileText, FolderTree, Tags, Image as ImageIcon, Settings, Plus,
+  LayoutDashboard, FileText, FolderTree, Tags, Image as ImageIcon, Settings,
 } from 'lucide-react';
 import { cn } from '@/lib/cn';
 import { BrandMark } from '@/components/site/brand-mark';
 import { SignOutButton } from '@/components/cms/sign-out-button';
+import { NewPostLink } from '@/components/cms/new-post-link';
 
 type NavItem = {
   href: string;
@@ -62,13 +63,7 @@ export function CmsSidebar({
         <span className="text-sm font-medium">Trippy Ants CMS</span>
       </div>
 
-      <Link
-        href="/cms/posts/new"
-        className="mb-[18px] flex items-center justify-center gap-1.5 rounded-lg bg-ink px-3 py-2 text-[13px] font-medium text-white transition-opacity hover:opacity-90"
-      >
-        <Plus className="h-3.5 w-3.5" aria-hidden />
-        New post
-      </Link>
+      <NewPostLink variant="sidebar" />
 
       <nav className="flex-1">
         {nav.map((item) => {

@@ -25,7 +25,6 @@ export const metadata: Metadata = {
   },
   description:
     'Design stories, branding insights, and creative process from Trippy Ants Design — a multi-disciplinary design studio in Jaipur.',
-  icons: { icon: '/favicon.png', apple: '/favicon.png' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

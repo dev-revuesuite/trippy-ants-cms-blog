@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/server';
-import { Plus } from 'lucide-react';
 import { StatusBadge } from '@/components/cms/status-badge';
 import { CmsNoticeBanner } from '@/components/cms/notice-banner';
+import { NewPostLink } from '@/components/cms/new-post-link';
 import { formatRelativeTime } from '@/lib/utils';
 import { PostRowActions } from './row-actions';
 
@@ -88,13 +88,7 @@ export default async function PostsList({
                 </Link>
               ))}
             </div>
-            <Link
-              href="/cms/posts/new"
-              className="inline-flex items-center gap-1 rounded-lg bg-ink px-3 py-1.5 text-xs font-medium text-white hover:opacity-90"
-            >
-              <Plus className="h-3.5 w-3.5" />
-              New post
-            </Link>
+            <NewPostLink variant="toolbar" />
           </div>
         </div>
 
