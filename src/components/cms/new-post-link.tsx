@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Loader2, Plus } from 'lucide-react';
 import { cn } from '@/lib/cn';
 
@@ -19,7 +20,13 @@ export function NewPostLink({
   variant?: keyof typeof variants;
   className?: string;
 }) {
+  const pathname = usePathname();
   const [loading, setLoading] = useState(false);
+
+  // Sidebar stays mounted across navigations — reset when route settles.
+  useEffect(() => {
+    setLoading(false);
+  }, [pathname]);
 
   return (
     <Link
